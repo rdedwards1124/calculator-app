@@ -1,8 +1,9 @@
 
 
 function Subtract(){
+  let result = num1 - num2
   return (
-    console.log("Subtract")
+    result
   )
 }
 

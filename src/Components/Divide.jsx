@@ -1,8 +1,9 @@
 
 
 function Divide(){
+  let result = num1 % num2
   return (
-    console.log("divide")
+    result
   )
 }
 
