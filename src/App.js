@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form className="form">
+        <input type="text" className="space-around"/>
+        <select className="space-around">
+          <option>plus</option>
+          <option>minus</option>
+          <option>times</option>
+          <option>divided by</option>
+        </select>
+        <input type="text" className="space-around"/>
+        <button className="space-around">equals</button>
+        <input className="space-around"/>
+      </form>
     </div>
   );
 }

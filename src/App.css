@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+/*------------------------------------------*/
+/*             My Own CSS                   */
+/*------------------------------------------*/
+
+.form{
+  text-align: center;
+  margin-top: 20%;
+}
+
+.space-around{
+  margin: 10px;
+}
+
+
+
+
+
+
+
