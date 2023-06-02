@@ -16,7 +16,6 @@ function App() {
     }
     if("user-selects-minus-from-drop-menu"){
       // Use the Subtract Function
-
     }
     if("user-selects-times-from-drop-menu"){
       // Use the Multiply Function
@@ -27,7 +26,15 @@ function App() {
     answer = "" /* The result from one of the functions */
     return answer
   }
-
+  
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+  }
+// 3 state values
+// state value for 1 and 2 
+// attach to onchange
+// state for 3 wil be blank
+// set state to handlesub function to the answer.
   return (
     <div>
       <form className="form">
@@ -39,7 +46,7 @@ function App() {
           <option value="divide">divided by</option>
         </select>
         <input type="text" className="space-around"/> {/* User inputs 2nd number here */}
-        <button className="space-around">equals</button> {/* The button to activate the equation function */}
+        <button className="space-around" onClick={(e)=>{handleSubmit(e)}}>equals</button> {/* The button to activate the equation function */}
         <input className="space-around"/> {/* This displays the answer to the equation */}
       </form>
     </div>
