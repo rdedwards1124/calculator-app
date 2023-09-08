@@ -1,4 +1,3 @@
-
 // import './App.css';
 // import React, {useState} from 'react'
 // import Add from './Components/Add';
@@ -32,7 +31,7 @@
 //     e.preventDefault()
 //   }
 // // 3 state values
-// // state value for 1 and 2 
+// // state value for 1 and 2
 // //---- attach to onchange
 // // state for 3 wil be blank
 // //---- set state to handlesub function to the answer.
@@ -55,7 +54,6 @@
 // }
 
 // export default App;
-
 
 ////////////////////////////////////////////////////////
 
@@ -115,71 +113,96 @@
 
 ////////////////////////////////////////////////
 
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState, ChangeEvent } from "react";
+import "./App.css";
 
 function App() {
-  const [number1, setNumber1] = useState('');
-  const [number2, setNumber2] = useState('');
-  const [operation, setOperation] = useState('');
-  const [result, setResult] = useState('');
+   const [number1, setNumber1] = useState<string>("");
+   const [number2, setNumber2] = useState<string>("");
+   const [operation, setOperation] = useState<string>("");
+   const [result, setResult] = useState<string>("");
 
-  const handleNumber1Change = (e) => {
-    setNumber1(e.target.value);
-  };
+   const handleNumber1Change = (e: ChangeEvent<HTMLInputElement>) => {
+       setNumber1(e.target.value);
+   };
 
-  const handleNumber2Change = (e) => {
-    setNumber2(e.target.value);
-  };
+   const handleNumber2Change = (e: ChangeEvent<HTMLInputElement>) => {
+       setNumber2(e.target.value);
+   };
 
-  const handleOperationChange = (e) => {
-    setOperation(e.target.value);
-  };
+   const handleOperationChange = (e: ChangeEvent<HTMLSelectElement>) => {
+       setOperation(e.target.value);
+   };
 
-  const handleCalculate = () => {
-    let calculationResult;
+   const handleCalculate = () => {
+       let calculationResult;
 
-    switch (operation) {
-      case '+':
-        calculationResult = Number(number1) + Number(number2);
-        break;
-      case '-':
-        calculationResult = Number(number1) - Number(number2);
-        break;
-      case '*':
-        calculationResult = Number(number1) * Number(number2);
-        break;
-      case '/':
-        calculationResult = Number(number1) / Number(number2);
-        break;
-      default:
-        return;
-    }
+       switch (operation) {
+           case "+":
+               calculationResult = Number(number1) + Number(number2);
+               break;
+           case "-":
+               calculationResult = Number(number1) - Number(number2);
+               break;
+           case "*":
+               calculationResult = Number(number1) * Number(number2);
+               break;
+           case "/":
+               calculationResult = Number(number1) / Number(number2);
+               break;
+           default:
+               return;
+       }
 
-    setResult(`Result: ${calculationResult}`);
-  };
+       setResult(`Result: ${calculationResult}`);
+   };
 
-  return (
-    <div className="App">
-      <h2>Arithmetic Calculator</h2>
-      <input type="number" placeholder="Enter number 1" value={number1} onChange={handleNumber1Change} />
-      <input type="number" placeholder="Enter number 2" value={number2} onChange={handleNumber2Change} />
-      <br />
-      <select value={operation} onChange={handleOperationChange}>
-        <option value="">Select Operation</option>
-        <option value="+">Add</option>
-        <option value="-">Subtract</option>
-        <option value="*">Multiply</option>
-        <option value="/">Divide</option>
-      </select>
-      <br />
-      <button onClick={handleCalculate} disabled={!operation}>
-        Calculate
-      </button>
-      <br />
-      {result && <p>{result}</p>}
-    </div>
-  );
+   return (
+       <div className="App">
+           <h2>Arithmetic Calculator</h2>
+           <input
+               type="number"
+               placeholder="Enter number 1"
+               value={number1}
+               onChange={handleNumber1Change}
+           />
+           <input
+               type="number"
+               placeholder="Enter number 2"
+               value={number2}
+               onChange={handleNumber2Change}
+           />
+           <br />
+           <select value={operation} onChange={handleOperationChange}>
+               <option value="">Select Operation</option>
+               <option value="+">Add</option>
+               <option value="-">Subtract</option>
+               <option value="*">Multiply</option>
+               <option value="/">Divide</option>
+           </select>
+           <br />
+           <button onClick={handleCalculate} disabled={!operation}>
+               Calculate
+           </button>
+           <br />
+           {result && <p>{result}</p>}
+       </div>
+   );
 }
 
 export default App;
+
+
+
+
+/*
+
+            <select value={operation} onChange={handleOperationChange}>
+                <option value="">Select Operation</option>
+                <option value="+">Add</option>
+                <option value="-">Subtract</option>
+                <option value="*">Multiply</option>
+                <option value="/">Divide</option>
+            </select>
+
+*/
