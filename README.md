@@ -4,7 +4,12 @@
 The Calculator App is a react-app that lets the user calculate equations based on two numbers given by the user. This app is a great way to use a calculator that is both super fun and super easy!
 
 ## Usage
-The user can directly type in any number for both, and use the drop down menu to either add, subtract, multiply, or divide the number given.
+The user can directly type in any number for both the left and right input boxes, and use the drop down menu to either add, subtract, multiply, or divide the numbers given.
+Step1: Type in a number where it says "Enter number 1"
+Step2: Type in a number where it says "Enter number 2"
+Step3: Click where it says "Select Operation" and choose the one you desire.
+Step4: Lastly, click on the button that says "Calculate"
+The result of your calculation will be given below the calculate button!
 
 ## Technologies
 This project was created using the npx create-react-app. All dependencies are listed below:
